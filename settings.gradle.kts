@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Templates"
 include(":app")
 include(":domain")
+include(":data")
