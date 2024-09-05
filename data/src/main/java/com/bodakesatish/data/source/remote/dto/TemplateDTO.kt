@@ -1,8 +1,8 @@
-package com.bodakesatish.data.source.remote.entity
+package com.bodakesatish.data.source.remote.dto
 
 import com.bodakesatish.data.source.base.BaseEntity
 
-data class SchemeResponse(
+data class TemplateDTO(
     val schemeCode: String,
     val schemeName: String
 ) : BaseEntity()

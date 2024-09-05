@@ -1,6 +1,6 @@
 package com.bodakesatish.data.source.base
 
-object ApiResponseCode {
+object RemoteResponseCode {
     const val SUCCESS = 0
     const val EMPTY = 1
     const val NETWORK_ERROR = 2

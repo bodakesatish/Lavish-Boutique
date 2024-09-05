@@ -1,13 +1,11 @@
 package com.bodakesatish.data.source
 
 import com.bodakesatish.data.source.base.BaseOutput
-import com.bodakesatish.domain.model.response.SchemeModel
+import com.bodakesatish.domain.model.response.Template
 
 interface DataSource {
 
-    interface SchemeSource {
-        suspend fun getSchemeList(): BaseOutput<List<SchemeModel>>
-        suspend fun getSchemeListCount() : BaseOutput<Int>
-        suspend fun getPaginatedSchemeList(currentPage: Int, pageSize: Int): BaseOutput<List<SchemeModel>>
+    interface TemplateSource {
+        suspend fun getTemplateList(pageSize: Int, offset: Int, searchQuery: String): BaseOutput<List<Template>>
     }
 }

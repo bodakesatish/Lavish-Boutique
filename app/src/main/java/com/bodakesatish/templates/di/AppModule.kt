@@ -2,8 +2,8 @@ package com.bodakesatish.templates.di
 
 import com.bodakesatish.data.prefs.SessionManager
 import com.bodakesatish.data.prefs.SharedPreferencesManagerImpl
-import com.bodakesatish.data.repository.SchemeRepositoryImpl
-import com.bodakesatish.domain.repository.SchemeRepository
+import com.bodakesatish.data.repository.TemplateRepositoryImpl
+import com.bodakesatish.domain.repository.TemplateRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,11 +14,10 @@ import dagger.hilt.components.SingletonComponent
 abstract class AppModule {
 
     @Binds
-    internal abstract fun provideSchemeRepository(impl: SchemeRepositoryImpl): SchemeRepository
+    internal abstract fun provideTemplateRepository(templateRepositoryImpl: TemplateRepositoryImpl): TemplateRepository
 
 
     @Binds
     internal abstract fun provideSharedPreferencesManager(sharedPreferencesManagerImpl: SharedPreferencesManagerImpl): SessionManager
-
 
 }

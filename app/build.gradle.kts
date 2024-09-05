@@ -45,6 +45,9 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    //ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
     // Hilt
     implementation(libs.hilt.android.core)
     implementation(project(":data"))

@@ -5,8 +5,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.bodakesatish.data.source.base.BaseEntity
 
-@Entity(tableName = SchemeEntity.TABLE_NAME)
-data class SchemeEntity(
+@Entity(tableName = TemplateEntity.TABLE_NAME)
+data class TemplateEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = Columns.ID)
     val id: Int,

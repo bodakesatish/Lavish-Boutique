@@ -1,6 +1,6 @@
 package com.bodakesatish.data.source.remote.source.base
 
-import com.bodakesatish.data.source.base.ApiResponseCode
+import com.bodakesatish.data.source.base.RemoteResponseCode
 import com.bodakesatish.data.source.base.BaseOutput
 import com.bodakesatish.domain.model.base.BaseRequest
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -26,10 +26,10 @@ abstract class BaseDataSourceRemote<P : BaseRequest> {
 
     suspend fun <T : Any, Q : Any> getOutput(response : Response<T>, mapper : suspend() -> Q) : BaseOutput<Q> {
         return when {
-            isValidResponse(response) -> BaseOutput.Success(ApiResponseCode.SUCCESS, mapper.invoke())
-            isEmptyResponse(response) -> BaseOutput.Success(ApiResponseCode.EMPTY, null)
-            isNetworkError(response) -> BaseOutput.Error(ApiResponseCode.NETWORK_ERROR)
-            else -> BaseOutput.Error(ApiResponseCode.UNKNOWN_ERROR)
+            isValidResponse(response) -> BaseOutput.Success(RemoteResponseCode.SUCCESS, mapper.invoke())
+            isEmptyResponse(response) -> BaseOutput.Success(RemoteResponseCode.EMPTY, null)
+            isNetworkError(response) -> BaseOutput.Error(RemoteResponseCode.NETWORK_ERROR)
+            else -> BaseOutput.Error(RemoteResponseCode.UNKNOWN_ERROR)
         }
     }
 

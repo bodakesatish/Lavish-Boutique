@@ -2,7 +2,7 @@ package com.bodakesatish.data.di
 
 import android.app.Application
 import androidx.room.Room
-import com.bodakesatish.data.source.local.database.DhansanchayDatabase
+import com.bodakesatish.data.source.local.database.TemplateDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,17 +17,17 @@ class RoomModule {
 
     @Singleton
     @Provides
-    fun providesDatabase(appContext: Application): DhansanchayDatabase {
+    fun providesDatabase(appContext: Application): TemplateDatabase {
         return Room.databaseBuilder(
             appContext,
-            DhansanchayDatabase::class.java,
+            TemplateDatabase::class.java,
             DATABASE_NAME
         ).build()
     }
 
     @Singleton
     @Provides
-    fun providesSchemeDao(database: DhansanchayDatabase) = database.schemeDao()
+    fun providesSchemeDao(database: TemplateDatabase) = database.schemeDao()
 
 
 }

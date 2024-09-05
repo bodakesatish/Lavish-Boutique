@@ -1,6 +1,6 @@
 package com.bodakesatish.data.di
 
-import com.bodakesatish.data.source.remote.source.ApiService
+import com.bodakesatish.data.source.remote.source.TemplateApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -51,8 +51,8 @@ class RetrofitModule {
 
     @Provides
     @Singleton
-    internal fun provideDataService(@Named("retrofitBuilderDataService") retrofit: Retrofit): ApiService {
-        return retrofit.create<ApiService>(ApiService::class.java)
+    internal fun provideDataService(@Named("retrofitBuilderDataService") retrofit: Retrofit): TemplateApiService {
+        return retrofit.create<TemplateApiService>(TemplateApiService::class.java)
     }
 
 }

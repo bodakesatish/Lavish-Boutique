@@ -1,6 +1,6 @@
 package com.bodakesatish.data.mapper.base
 
-import com.bodakesatish.data.source.base.ApiResponseCode
+import com.bodakesatish.data.source.base.RemoteResponseCode
 import com.bodakesatish.data.source.base.BaseOutput
 import com.bodakesatish.domain.model.ResponseCode
 import com.bodakesatish.domain.usecases.base.BaseUseCase
@@ -58,11 +58,11 @@ class BaseOutputRemoteMapper<T : Any> {
         when (output) {
             is BaseOutput.Success -> {
                 when (output.code) {
-                    ApiResponseCode.SUCCESS -> {
+                    RemoteResponseCode.SUCCESS -> {
                         val data = executeOnSuccess.invoke(output.output!!)
                         mapSuccessOutput(data, response)
                     }
-                    ApiResponseCode.EMPTY -> {
+                    RemoteResponseCode.EMPTY -> {
                         mapEmptyOutput(output, response)
                     }
                 }
@@ -83,11 +83,11 @@ class BaseOutputRemoteMapper<T : Any> {
         when (output) {
             is BaseOutput.Success -> {
                 when (output.code) {
-                    ApiResponseCode.SUCCESS -> {
+                    RemoteResponseCode.SUCCESS -> {
                         val data = executeOnSuccess.invoke(output.output!!)
                         mapSuccessOutput(data, response)
                     }
-                    ApiResponseCode.EMPTY -> {
+                    RemoteResponseCode.EMPTY -> {
                         val data = executeOnEmpty.invoke()
                         if(data is List<*> && data.size > 0) {
                             mapSuccessOutput(data, response)
@@ -128,10 +128,10 @@ class BaseOutputRemoteMapper<T : Any> {
 
     private fun mapErrorOutput(output: BaseOutput.Error, response: BaseUseCase.Response<T>) {
         when (output.code) {
-            ApiResponseCode.NETWORK_ERROR -> {
+            RemoteResponseCode.NETWORK_ERROR -> {
                 response.setResponseCode(ResponseCode.Network)
             }
-            ApiResponseCode.AUTHENTICATION_FAILED -> {
+            RemoteResponseCode.AUTHENTICATION_FAILED -> {
                 response.setResponseCode(ResponseCode.Authentication)
             }
             else -> {
@@ -148,13 +148,13 @@ class BaseOutputRemoteMapper<T : Any> {
         val data = executeOnError.invoke()
         response.setData(data)
         when (output.code) {
-            ApiResponseCode.NETWORK_ERROR -> {
+            RemoteResponseCode.NETWORK_ERROR -> {
                 response.setResponseCode(ResponseCode.Network)
             }
-            ApiResponseCode.AUTHENTICATION_FAILED -> {
+            RemoteResponseCode.AUTHENTICATION_FAILED -> {
                 response.setResponseCode(ResponseCode.Authentication)
             }
-            ApiResponseCode.UNKNOWN_ERROR -> {
+            RemoteResponseCode.UNKNOWN_ERROR -> {
                 response.setResponseCode(ResponseCode.Fail)
             }
             else -> {
