@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.bodakesatish.data.source.local.base.BaseDao
 import com.bodakesatish.data.source.local.entity.TemplateEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TemplateDao : BaseDao<TemplateEntity> {
@@ -21,5 +22,8 @@ interface TemplateDao : BaseDao<TemplateEntity> {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllTemplateList(list: List<TemplateEntity>) : List<Long>
+
+    @Query("SELECT * FROM ${TemplateEntity.TABLE_NAME}")
+    fun searchTemplateListFlow() : Flow<List<TemplateEntity>>
 
 }

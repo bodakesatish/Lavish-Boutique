@@ -36,9 +36,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
 
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -48,12 +54,20 @@ dependencies {
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
+    //Paging
+    implementation(libs.androidx.paging.common.android)
+
+    // Navigation
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+
     // Hilt
     implementation(libs.hilt.android.core)
-    implementation(project(":data"))
+    implementation(libs.androidx.paging.runtime.ktx)
     kapt(libs.hilt.compiler)
 
-    implementation(project(":domain"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

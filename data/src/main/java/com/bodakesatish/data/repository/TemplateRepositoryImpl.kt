@@ -1,6 +1,7 @@
 package com.bodakesatish.data.repository
 
 import android.util.Log
+import androidx.annotation.WorkerThread
 import com.bodakesatish.data.prefs.SessionConstants
 import com.bodakesatish.data.prefs.SessionManager
 import com.bodakesatish.data.source.base.BaseOutput
@@ -9,7 +10,13 @@ import com.bodakesatish.data.source.remote.source.TemplateDataSourceRemote
 import com.bodakesatish.domain.model.ResponseCode
 import com.bodakesatish.domain.model.request.TemplateRequest
 import com.bodakesatish.domain.repository.TemplateRepository
+import com.bodakesatish.domain.usecases.TemplateFlowUseCase
 import com.bodakesatish.domain.usecases.TemplateUseCase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.onCompletion
+import kotlinx.coroutines.flow.onStart
 import java.util.Date
 import javax.inject.Inject
 
@@ -48,8 +55,11 @@ constructor(
             } else {
                 ArrayList()
             }
-            response.setData(responseData)
-            return response
+            if(responseData.isNotEmpty()) {
+                response.setData(responseData)
+                return response
+            }
+
         }
 
         val remoteOutput = templateDataSourceRemote.getTemplateList(request.pageSize, request.currentPage, searchQuery = request.searchText)
@@ -74,4 +84,15 @@ constructor(
         return response
     }
 
+    override suspend fun getTemplateListFlow(
+        request: TemplateRequest
+    ) : TemplateFlowUseCase.Response {
+        Log.i(tag, "In $tag getTemplateListFlow")
+        val response = TemplateFlowUseCase.Response()
+        val localOutput = templateDataSourceLocal.getTemplateListFlow(request.searchText)
+        val d = localOutput as BaseOutput.Success
+        response.setResponseCode(ResponseCode.Success)
+        response.setData(d.output)
+        return response
+    }
 }
