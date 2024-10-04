@@ -1,11 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@+id/dest_template_list">
+    app:startDestination="@+id/navigation_home">
     <fragment
         android:id="@+id/dest_template_list"
         android:name="com.bodakesatish.templates.ui.template.FragmentTemplateList"
-        android:label="Template List"
+        android:label="Template List" />
+
+    <fragment
+        android:id="@+id/dest_service_list"
+        android:name="com.bodakesatish.templates.ui.services.FragmentServicesList"
+        android:label="Service"
         app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/dest_create_service"
+        android:name="com.bodakesatish.templates.ui.services.FragmentCreateOrEditServices"
+        android:label="Service"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.bodakesatish.templates.ui.bill.FragmentBillList"
+        android:label="@string/title_job"
+        tools:layout="@layout/fragment_bill_list" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.bodakesatish.templates.ui.customer.FragmentCustomerList"
+        android:label="@string/title_customer"
+        tools:layout="@layout/fragment_customer_list" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.bodakesatish.templates.ui.services.FragmentServicesList"
+        android:label="Service"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/dest_create_customer"
+        android:name="com.bodakesatish.templates.ui.customer.FragmentCreateOrEditCustomer"
+        android:label="New Customer" />
+
+    <fragment
+        android:id="@+id/dest_create_job"
+        android:name="com.bodakesatish.templates.ui.bill.FragmentCreateOrEditBill"
+        android:label="New Job" />
+
+
 </navigation>

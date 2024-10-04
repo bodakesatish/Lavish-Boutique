@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Templates"
+rootProject.name = "Lavish Boutique"
 include(":app")
 include(":domain")
 include(":data")

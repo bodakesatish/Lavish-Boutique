@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Templates</string>
+    <string name="app_name">Lavish Boutique</string>
+    <string name="label_all">All Tasks</string>
+    <string name="label_active">Active Tasks</string>
+    <string name="label_completed">Completed Tasks</string>
+    <string name="no_tasks_all">You have no tasks!</string>
+    <string name="no_tasks_active">You have no active tasks!</string>
+    <string name="no_tasks_completed">You have no completed tasks!</string>
+    <string name="title_home">Bookings</string>
+    <string name="title_dashboard">Customer</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_services">Services</string>
+    <string name="title_customer">Customer List</string>
+    <string name="title_job">Bills</string>
+    <string name="label_full_name"><![CDATA[Customer Full Name <font color=\'#FF0000\'>*</font>]]></string>
+    <string name="create_bill">Create Bill</string>
 </resources>

@@ -11,7 +11,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.bodakesatish.templates"
+        applicationId = "com.bodakesatish.lavishboutique"
         minSdk = 26
         targetSdk = 35
         versionCode = 1

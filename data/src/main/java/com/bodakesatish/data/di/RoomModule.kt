@@ -29,5 +29,19 @@ class RoomModule {
     @Provides
     fun providesSchemeDao(database: TemplateDatabase) = database.schemeDao()
 
+    @Singleton
+    @Provides
+    fun providesServicesDao(database: TemplateDatabase) = database.serviceDao()
 
+    @Singleton
+    @Provides
+    fun providesCustomerDao(database: TemplateDatabase) = database.customerDao()
+
+    @Singleton
+    @Provides
+    fun providesJobDao(database: TemplateDatabase) = database.jobDao()
+
+    @Singleton
+    @Provides
+    fun providesJobDetailDao(database: TemplateDatabase) = database.jobDetailDao()
 }

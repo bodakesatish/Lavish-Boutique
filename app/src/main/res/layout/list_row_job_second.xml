@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rectangle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="18dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="18dp"
+    android:layout_marginBottom="10dp"
+    app:cardBackgroundColor="#F3F6FE"
+    app:cardCornerRadius="7dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="2dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/base"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/ic_reporter_step_1_base"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reporter_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="17dp"
+            android:alpha="0.6"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="4sp"
+            android:layout_marginTop="6dp"
+            android:text="report_id"
+            android:textAppearance="@style/edit_reporter_id"
+            app:layout_constraintBottom_toTopOf="@+id/et_reporter_id"
+            app:layout_constraintEnd_toStartOf="@+id/tv_reporting_date"
+            app:layout_constraintStart_toStartOf="@+id/base"
+            app:layout_constraintTop_toTopOf="@+id/base"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/et_reporter_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="5sp"
+            android:text="chltrck1234"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="7dp"
+            android:textAppearance="@style/chltrck1234"
+            app:layout_constraintBottom_toBottomOf="@id/base"
+            app:layout_constraintEnd_toEndOf="@+id/reporter_id"
+            app:layout_constraintStart_toStartOf="@id/reporter_id"
+            app:layout_constraintTop_toBottomOf="@+id/reporter_id"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/tv_reporting_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:alpha="0.6"
+            android:layout_marginTop="6dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="4sp"
+            android:text="Date"
+            android:textAppearance="@style/edit_reporter_id"
+            app:layout_constraintBottom_toTopOf="@+id/tv_date_value"
+            app:layout_constraintEnd_toStartOf="@+id/iv_delete"
+            app:layout_constraintStart_toEndOf="@+id/reporter_id"
+            app:layout_constraintTop_toTopOf="@+id/base"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/tv_date_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:lineSpacingExtra="5sp"
+            android:text="21  Jan  2022"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="7dp"
+            android:textAppearance="@style/chltrck1234"
+            app:layout_constraintBottom_toBottomOf="@+id/base"
+            app:layout_constraintEnd_toStartOf="@id/iv_delete"
+            app:layout_constraintStart_toStartOf="@+id/tv_reporting_date"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reporting_date"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:padding="16dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="@id/base"
+            app:layout_constraintEnd_toStartOf="@+id/iv_toggle"
+            app:layout_constraintTop_toTopOf="@id/base" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/iv_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:background="#00000000"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_collapse"
+            app:layout_constraintBottom_toBottomOf="@id/base"
+            app:layout_constraintEnd_toEndOf="@id/base"
+            app:layout_constraintTop_toTopOf="@id/base" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_add_reporter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3sp"
+            android:text="Add Reporter"
+            android:textAppearance="@style/add_reporter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/base" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_add_child"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3sp"
+            android:text="Add Child"
+            android:textAppearance="@style/add_reporter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_add_reporter" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_add_incident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3sp"
+            android:text="Add Incident"
+            android:textAppearance="@style/add_reporter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_add_child" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/label_confirm_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3sp"
+            android:text="Confirm and Proceed"
+            android:textAppearance="@style/add_reporter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_add_incident" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_add_reporter_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_add_reporter"
+            app:layout_constraintEnd_toStartOf="@+id/iv_edit_reporter_status"
+            app:layout_constraintTop_toTopOf="@+id/label_add_reporter"
+            app:srcCompat="@drawable/ic_green_tick_circle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_edit_reporter_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_add_reporter"
+            app:layout_constraintEnd_toEndOf="@id/base"
+            app:layout_constraintTop_toTopOf="@+id/label_add_reporter"
+            app:srcCompat="@drawable/ic_edit_pencil_grey" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_add_child_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_add_child"
+            app:layout_constraintEnd_toStartOf="@+id/iv_edit_child_status"
+            app:layout_constraintTop_toTopOf="@+id/label_add_child"
+            app:srcCompat="@drawable/ic_red_tick_circle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_edit_child_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_add_child"
+            app:layout_constraintEnd_toEndOf="@id/base"
+            app:layout_constraintTop_toTopOf="@+id/label_add_child"
+            app:srcCompat="@drawable/ic_edit_pencil_grey" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_add_incident_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_add_incident"
+            app:layout_constraintEnd_toStartOf="@+id/iv_edit_incident_status"
+            app:layout_constraintTop_toTopOf="@+id/label_add_incident"
+            app:srcCompat="@drawable/ic_red_tick_circle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_edit_incident_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_add_incident"
+            app:layout_constraintEnd_toEndOf="@id/base"
+            app:layout_constraintTop_toTopOf="@+id/label_add_incident"
+            app:srcCompat="@drawable/ic_edit_pencil_grey" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_add_confirm_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_confirm_proceed"
+            app:layout_constraintEnd_toStartOf="@+id/iv_edit_confirm_status"
+            app:layout_constraintTop_toTopOf="@+id/label_confirm_proceed"
+            app:srcCompat="@drawable/ic_red_tick_circle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_edit_confirm_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_confirm_proceed"
+            app:layout_constraintEnd_toEndOf="@id/base"
+            app:layout_constraintTop_toTopOf="@+id/label_confirm_proceed"
+            app:srcCompat="@drawable/ic_edit_pencil_grey" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="label_add_reporter,label_add_child,label_add_incident,label_confirm_proceed,
+            iv_add_reporter_status, iv_edit_reporter_status,
+            iv_add_child_status, iv_edit_child_status,
+            iv_add_incident_status, iv_edit_incident_status,
+            iv_add_confirm_status, iv_edit_confirm_status" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
