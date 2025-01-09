@@ -10,6 +10,10 @@ data class ServiceEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = Columns.ID)
     val id: Int,
+    @ColumnInfo(name = Columns.CATEGORY_ID)
+    val categoryId: Int,
+    @ColumnInfo(name = Columns.CATEGORY_PRODUCT_ID)
+    val categoryProductId: Int,
     @ColumnInfo(name = Columns.SERVICE_NAME)
     val serviceName: String,
     @ColumnInfo(name = Columns.SERVICE_DESCRIPTION)
@@ -24,6 +28,8 @@ data class ServiceEntity(
 
     internal object Columns {
         internal const val ID = "id"
+        internal const val CATEGORY_ID = "categoryId"
+        internal const val CATEGORY_PRODUCT_ID = "categoryProductId"
         internal const val SERVICE_NAME = "serviceName"
         internal const val SERVICE_DESCRIPTION = "serviceDescription"
         internal const val SERVICE_PRICE = "servicePrice"
